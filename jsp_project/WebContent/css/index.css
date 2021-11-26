@@ -48,7 +48,13 @@ body
 	justify-content : center;
 	align-items : center;
 	float : left;
-	text-align: center
+	text-align: center;
+	color: black;
+	
+}
+
+.menu-item:hover{
+	background-color : yellowgreen;
 }
 
 .main {
