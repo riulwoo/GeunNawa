@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+        <%
+    String target = request.getParameter("target");
+    if(target == null) target = "home2";
+    String targetPage = target + ".jsp";
+    %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,27 +14,28 @@
 <title>근나와</title>
 </head>
 <body>
+<div class = "container">
 	<div class = "index-header">
 		<div class = "img"><a href = "index.jsp"><img src="banner.png" width = 140 height = 60 border = "0"/></a></div>
 		<div class = "loginchk"><jsp:include page = "include/logininfo.jsp"></jsp:include></div>	
 	</div>
 	
 <div class = "menu">
-	<div class = "menu-item"><a href = "#">CPU</a></div>
-	<div class = "menu-item"><a href = "#">RAM</a></div>
-	<div class = "menu-item"><a href = "#">M/B</a></div>
-	<div class = "menu-item"><a href = "#">VGA</a></div>
-	<div class = "menu-item"><a href = "#">HDD</a></div>
-	<div class = "menu-item"><a href = "#">마우스</a></div>
-	<div class = "menu-item"><a href = "#">키보드</a></div>
-	<div class = "menu-item"><a href = "#">케이스</a></div>
+	<div class = "menu-item"><a href = "index.jsp?target=cpu">CPU</a></div>
+	<div class = "menu-item"><a href = "index.jsp?target=ram">RAM</a></div>
+	<div class = "menu-item"><a href = "index.jsp?target=mb">M/B</a></div>
+	<div class = "menu-item"><a href = "index.jsp?target=vga">VGA</a></div>
+	<div class = "menu-item"><a href = "index.jsp?target=hdd">HDD</a></div>
+	<div class = "menu-item"><a href = "index.jsp?target=mouse">마우스</a></div>
+	<div class = "menu-item"><a href = "index.jsp?target=keyboard">키보드</a></div>
+	<div class = "menu-item"><a href = "index.jsp?target=case">케이스</a></div>
 </div>
 	<div class = "main">
-
+		<jsp:include page="<%= targetPage %>"></jsp:include>
 	
 	</div>
 	
-	
+</div>
 	
 	
 	
